@@ -1,0 +1,12 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN ls -al
+RUN npm install
+RUN touch file1.txt
+
+COPY . .
+
+CMD ["ping", "google.com"]
